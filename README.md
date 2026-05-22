@@ -2,6 +2,10 @@
 
 [Mask4D](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/marcuzzi2023ral-meem.pdf) with updated installation.
 
+## Prerequisite
+* Ubuntu 20.04
+* CUDA 11.3
+
 ## Overview
 * Mask4D is a method for 4D panoptic segmentation using masks. It builds on top of [MaskPLS](https://github.com/PRBonn/MaskPLS) using [SphereFormer](https://github.com/dvlab-research/SphereFormer/tree/master) as feature extractor.
 * We reuse the output queries of previous steps to decode and track the same instance over time.
