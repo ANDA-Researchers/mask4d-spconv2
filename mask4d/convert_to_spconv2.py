@@ -17,7 +17,7 @@ TARGET_KEYS = {
 def convert_checkpoint(in_path: str, out_path: str, target_keys=TARGET_KEYS):
 
     checkpoint = torch.load(in_path, map_location="cpu")
-    state_dict = checkpoint.get("state_dict", checkpoint)
+    state_dict = checkpoint["state_dict"]
 
     for key in target_keys:
 
