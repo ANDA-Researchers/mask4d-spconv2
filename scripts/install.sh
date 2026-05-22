@@ -4,7 +4,7 @@ if ! command -v uv &> /dev/null; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Install python
+# Create a virtual environment
 uv venv python
 
 # Install mask4d
