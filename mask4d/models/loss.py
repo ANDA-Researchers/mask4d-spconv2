@@ -4,7 +4,7 @@ from itertools import filterfalse
 
 import torch
 import torch.nn.functional as F
-from mask_4d.utils.misc import pad_stack
+from mask4d.utils.misc import pad_stack
 from torch import nn
 from torch.autograd import Variable
 

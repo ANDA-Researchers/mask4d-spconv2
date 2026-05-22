@@ -1,5 +1,5 @@
 EXPERIMENT:
-    ID: mask_4d
+    ID: mask4d
 
 TRAIN:
     STEP: 80
@@ -31,8 +31,8 @@ LOSS:
         WEIGHTS: [2,6] #Ce, Lovasz
 
 KITTI:
-    PATH: data/kitti
-    CONFIG: datasets/semantic-kitti.yaml
+    PATH: data/semantickitti
+    CONFIG: mask4d/datasets/semantic-kitti.yaml
     NUM_CLASSES: 20
     IGNORE_LABEL: 0
     MIN_POINTS: 10

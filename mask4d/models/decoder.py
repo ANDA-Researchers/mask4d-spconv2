@@ -1,8 +1,8 @@
 # Modified from https://github.com/facebookresearch/Mask2Former/blob/main/mask2former/modeling/transformer_decoder/mask2former_transformer_decoder.py
-import mask_4d.models.blocks as blocks
-import mask_4d.utils.misc as misc
+import mask4d.models.blocks as blocks
+import mask4d.utils.misc as misc
 import torch
-from mask_4d.models.positional_encoder import PositionalEncoder
+from mask4d.models.positional_encoder import PositionalEncoder
 from torch import nn
 
 

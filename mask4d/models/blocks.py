@@ -1,7 +1,7 @@
 from typing import Optional
 
 import torch
-from mask_4d.models.position_attention import PositionAttention
+from mask4d.models.position_attention import PositionAttention
 from torch import Tensor, nn
 from torch.nn import functional as F
 

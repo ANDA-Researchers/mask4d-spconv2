@@ -4,7 +4,7 @@ import random
 import numpy as np
 import torch
 import yaml
-from mask_4d.utils.data_util import data_prepare
+from mask4d.utils.data_util import data_prepare
 from pytorch_lightning import LightningDataModule
 from torch.utils.data import DataLoader, Dataset
 

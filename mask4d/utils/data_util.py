@@ -1,7 +1,7 @@
 # Modified by Rodrigo Marcuzzi from https://github.com/dvlab-research/SphereFormer/blob/master/util/data_util.py
 import numpy as np
 import torch
-from mask_4d.utils.voxelize import voxelize
+from mask4d.utils.voxelize import voxelize
 from torch_scatter import scatter_mean
 
 

@@ -7,7 +7,7 @@ import spconv.pytorch as spconv
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from mask_4d.models.spherical_transformer import SphereFormer
+from mask4d.models.spherical_transformer import SphereFormer
 from spconv.core import ConvAlgo
 from spconv.pytorch.modules import SparseModule
 from torch_scatter import scatter_mean

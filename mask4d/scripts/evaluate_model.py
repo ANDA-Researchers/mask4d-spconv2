@@ -5,8 +5,8 @@ import click
 import torch
 import yaml
 from easydict import EasyDict as edict
-from mask_4d.datasets.kitti_dataset import SemanticDatasetModule
-from mask_4d.models.mask_model import Mask4D
+from mask4d.datasets.kitti_dataset import SemanticDatasetModule
+from mask4d.models.mask_model import Mask4D
 from pytorch_lightning import Trainer, seed_everything
 
 

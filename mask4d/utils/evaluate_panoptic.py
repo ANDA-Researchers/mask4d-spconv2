@@ -2,7 +2,7 @@ import time
 
 import numpy as np
 import yaml
-from mask_4d.utils.eval_np import PanopticEval
+from mask4d.utils.eval_np import PanopticEval
 
 
 class PanopticKittiEvaluator:

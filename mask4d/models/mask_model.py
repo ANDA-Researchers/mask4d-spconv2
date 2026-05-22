@@ -1,18 +1,18 @@
-import mask_4d.utils.misc as misc
-import mask_4d.utils.testing as testing
+import mask4d.utils.misc as misc
+import mask4d.utils.testing as testing
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from mask_4d.models.backbone import SphericalEncoderDecoder
-from mask_4d.models.decoder import MaskedTransformerDecoder
-from mask_4d.models.loss import MaskLoss, SemLoss, WrongLoss
-from mask_4d.models.matcher import HungarianMatcher
-from mask_4d.models.positional_encoder import PositionalEncoder
-from mask_4d.utils.evaluate_4dpanoptic import PanopticKitti4DEvaluator
-from mask_4d.utils.evaluate_panoptic import PanopticKittiEvaluator
-from mask_4d.utils.instances import Tracks
-from mask_4d.utils.kalman_filter import KalmanBoxTracker
+from mask4d.models.backbone import SphericalEncoderDecoder
+from mask4d.models.decoder import MaskedTransformerDecoder
+from mask4d.models.loss import MaskLoss, SemLoss, WrongLoss
+from mask4d.models.matcher import HungarianMatcher
+from mask4d.models.positional_encoder import PositionalEncoder
+from mask4d.utils.evaluate_4dpanoptic import PanopticKitti4DEvaluator
+from mask4d.utils.evaluate_panoptic import PanopticKittiEvaluator
+from mask4d.utils.instances import Tracks
+from mask4d.utils.kalman_filter import KalmanBoxTracker
 from pytorch_lightning.core.lightning import LightningModule
 
 
