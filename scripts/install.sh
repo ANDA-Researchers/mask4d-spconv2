@@ -1,11 +1,11 @@
 # Install uv
-if ! command -v uv &> /dev/null; then
+if !command -v uv &> /dev/null; then
     curl -LsSf https://astral.sh/uv/install.sh | sh
-    export PATH="$HOME/.local/bin:$PATH"
+    export PATH=$HOME/.local/bin:$PATH
 fi
 
 # Create a virtual environment
-uv venv python
+uv venv python --clear
 
 # Install mask4d
 uv pip install -e .
