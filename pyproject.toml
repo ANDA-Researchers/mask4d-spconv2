@@ -10,7 +10,6 @@ dependencies = [
     "cumm-cu113>=0.4.11",
     "easydict==1.10",
     "filterpy==1.4.5",
-    "mask4d",
     "numpy==1.24.4",
     "pytorch-lightning==1.5.9",
     "pyyaml==6.0.1",
