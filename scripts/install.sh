@@ -1,12 +1,20 @@
-# Install mask4d separately to prevent error
-# with setuptools==59.5.0 (required by sptr)
+# Install uv
+if ! command -v uv &> /dev/null; then
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Install python
+uv python install
+
+# Install mask4d
 uv pip install -e .
 
-# Install pytorch (required by pytorch-geometric packages)
+# Install pytorch
 uv pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 \
     --extra-index-url https://download.pytorch.org/whl/cu113
 
-# Install pytorch-geometric packages separately to prevent building from source
+# Install pytorch-geometric packages
 uv pip install \
     torch-cluster==1.6.0+pt112cu113 \
     torch-scatter==2.1.0+pt112cu113 \
@@ -20,6 +28,5 @@ cd thirdparty/SparseTransformer
 uv run setup.py install
 cd ../..
 
-# Install the rest of the dependencies with
-# --inexact flag to prevent uninstalling mask4d
+# Install the rest of the dependencies
 uv sync --inexact
