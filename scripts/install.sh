@@ -5,7 +5,7 @@ if ! command -v uv &> /dev/null; then
 fi
 
 # Install python
-uv python install
+uv venv python
 
 # Install mask4d
 uv pip install -e .

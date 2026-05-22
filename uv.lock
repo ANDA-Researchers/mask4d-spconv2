@@ -625,7 +625,6 @@ requires-dist = [
     { name = "cumm-cu113", specifier = ">=0.4.11" },
     { name = "easydict", specifier = "==1.10" },
     { name = "filterpy", specifier = "==1.4.5" },
-    { name = "mask4d" },
     { name = "numpy", specifier = "==1.24.4" },
     { name = "pytorch-lightning", specifier = "==1.5.9" },
     { name = "pyyaml", specifier = "==6.0.1" },
