@@ -1,4 +1,6 @@
+import argparse
 import torch
+
 
 TARGET_KEYS = {
     "backbone.unet.conv.2.weight",
@@ -11,56 +13,29 @@ TARGET_KEYS = {
     "backbone.unet.deconv.2.weight",
 }
 
-checkpoint = torch.load("weights/mask4d.ckpt", map_location="cpu")
 
-state_dict = checkpoint["state_dict"]
+def convert_checkpoint(in_path: str, out_path: str, target_keys=TARGET_KEYS):
 
-for key in TARGET_KEYS:
-    if key not in state_dict:
-        print(f"Missing key: {key}")
-        continue
+    checkpoint = torch.load(in_path, map_location="cpu")
+    state_dict = checkpoint.get("state_dict", checkpoint)
 
-    value = state_dict[key]
+    for key in target_keys:
 
-    print(f"Converting {key}")
-    print(f"Before: {value.shape}")
+        value = state_dict[key]
+        print(f"Before: {value.shape}")
 
-    # [kx, ky, kz, in_c, out_c]
-    # ->
-    # [in_c, kx, ky, kz, out_c]
-    value = value.permute(3, 0, 1, 2, 4).contiguous()
+        value = value.permute(3, 0, 1, 2, 4).contiguous()
 
-    print(f"After:  {value.shape}")
+        print(f"After:  {value.shape}")
+        state_dict[key] = value
 
-    state_dict[key] = value
+    checkpoint["state_dict"] = state_dict
+    torch.save(checkpoint, out_path)
+    print(f"Saved converted checkpoint to {out_path}.")
 
-torch.save(checkpoint, "weights/mask4d_spconv2.ckpt")
-
-print("Saved converted checkpoint.")
-
-checkpoint = torch.load("weights/maskpls.ckpt", map_location="cpu")
-
-state_dict = checkpoint["state_dict"]
-
-for key in TARGET_KEYS:
-    if key not in state_dict:
-        print(f"Missing key: {key}")
-        continue
-
-    value = state_dict[key]
-
-    print(f"Converting {key}")
-    print(f"Before: {value.shape}")
-
-    # [kx, ky, kz, in_c, out_c]
-    # ->
-    # [in_c, kx, ky, kz, out_c]
-    value = value.permute(3, 0, 1, 2, 4).contiguous()
-
-    print(f"After:  {value.shape}")
-
-    state_dict[key] = value
-
-torch.save(checkpoint, "weights/maskpls_spconv2.ckpt")
-
-print("Saved converted checkpoint.")
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("in_path")
+    parser.add_argument("out_path")
+    args = parser.parse_args()
+    convert_checkpoint(args.in_path, args.out_path)

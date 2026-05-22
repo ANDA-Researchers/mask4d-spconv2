@@ -43,7 +43,7 @@ Download the [SemanticKITTI](http://www.semantic-kitti.org/dataset.html#overview
 
 * Download pretrained models ([Mask4D](https://www.ipb.uni-bonn.de/html/projects/mask_4d/mask4d.ckpt), [MaskPLS](https://www.ipb.uni-bonn.de/html/projects/mask_4d/maskpls.ckpt)) and convert them to `spconv2` format:
 ```bash
-bash scripts/download_weight.sh
+bash scripts/download_weights.sh
 ```
 
 ## Reproducing results
