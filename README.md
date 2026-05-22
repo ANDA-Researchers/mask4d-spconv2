@@ -1,6 +1,6 @@
 # Mask4D: End-to-End Mask-Based 4D Panoptic Segmentation for LiDAR Sequences
 
-This is the official implementation of [Mask4D](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/marcuzzi2023ral-meem.pdf).
+[Mask4D](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/marcuzzi2023ral-meem.pdf) with updated installation.
 
 ## Overview
 * Mask4D is a method for 4D panoptic segmentation using masks. It builds on top of [MaskPLS](https://github.com/PRBonn/MaskPLS) using [SphereFormer](https://github.com/dvlab-research/SphereFormer/tree/master) as feature extractor.
@@ -13,18 +13,9 @@ This is the official implementation of [Mask4D](https://www.ipb.uni-bonn.de/wp-c
 ## Get started
 
 Install this package by running in the root directory of this repo:
+```bash
+bash scripts/install.sh
 ```
-pip3 install -U -e .
-```
-
-Install pdependencies (we test on python=3.8.10, pytorch==1.12.0, cuda==11.3)
-
-```
-pip3 install torch==1.12.0+cu113 torchvision==0.13.0+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
-pip3 install -r requirements.txt
-```
-
-Install [SparseTransformer](https://github.com/dvlab-research/SparseTransformer).
 
 ## Data preparation: SemanticKITTI
 Download the [SemanticKITTI](http://www.semantic-kitti.org/dataset.html#overview) dataset inside the directory `data/kitti/`. The directory structure should look like this:
@@ -50,21 +41,22 @@ Download the [SemanticKITTI](http://www.semantic-kitti.org/dataset.html#overview
 
 ## Pretrained models
 
-* [Mask4D](https://www.ipb.uni-bonn.de/html/projects/mask_4d/mask4d.ckpt)
-* [MaskPLS](https://www.ipb.uni-bonn.de/html/projects/mask_4d/maskpls.ckpt)
+* Download pretrained models ([Mask4D](https://www.ipb.uni-bonn.de/html/projects/mask_4d/mask4d.ckpt), [MaskPLS](https://www.ipb.uni-bonn.de/html/projects/mask_4d/maskpls.ckpt)) and convert them to `spconv2` format:
+```bash
+bash scripts/download_weight.sh
+```
 
 ## Reproducing results
-```
-python3 scripts/evaluate_model.py --w [path_to_4D_model]
+```bash
+bash scripts/evaluate_single_gpu.sh
 ```
 
 ## Training
 
 We leverage the weights of the 3D model MaskPLS with SphereFormer as backbone.
 
-```
-python3 scripts/train_model.py --w [path_to_3D_model]
-
+```bash
+bash scripts/train_single_gpu.sh
 ```
 
 ## Citation
