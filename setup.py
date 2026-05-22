@@ -4,5 +4,5 @@
 
 from setuptools import find_packages, setup
 
-pkg = "mask_4d"
+pkg = "mask4d"
 setup(name=pkg, version="1.0", packages=find_packages())
