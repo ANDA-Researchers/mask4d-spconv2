@@ -1,0 +1,3 @@
+[submodule "thirdparty/SparseTransformer"]
+	path = thirdparty/SparseTransformer
+	url = git@github.com:JIA-Lab-research/SparseTransformer.git
