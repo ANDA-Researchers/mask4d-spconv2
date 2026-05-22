@@ -1,0 +1,7 @@
+*.egg-info/
+*logs/
+__pycache__/
+.venv/
+data/
+output/
+weights/
