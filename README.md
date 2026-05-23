@@ -1,12 +1,8 @@
 # Mask4D: End-to-End Mask-Based 4D Panoptic Segmentation for LiDAR Sequences
 
-[Mask4D](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/marcuzzi2023ral-meem.pdf) with `spconv` 2.x back-end support updated installation instruction.
+[Mask4D](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/marcuzzi2023ral-meem.pdf) with `spconv` 2.x back-end support and updated installation instruction, maintained by researcher at [ANDA Lab](https://anda-researchers.github.io/site/).
 
-Like many 3D computer vision research project, the original [Mask4D repo](git@github.com:PRBonn/Mask4D.git) relies on outdated dependencies which make installation cumbersome. We provide update that make installation and running experiments more convenient. This project has been tested on Ubuntu 20.04 with CUDA Toolkit 11.3 installed.
-
-Resolving complex dependencies involves many work-around, so please follow the instructions closely.
-
-As of now, the instructions aren't very customizable and well-tested, so feel free to open pull requests and issues to help us refine it.
+The original [Mask4D repo](https://github.com/PRBonn/Mask4D) relies on outdated dependencies, so we provide updates that make installation and running experiments more convenient. This project has been tested on Ubuntu 20.04 with CUDA Toolkit 11.3 installed.
 
 ## TO-DO
 * Add `cuda` installation instruction
@@ -27,7 +23,7 @@ Check if CUDA Toolkit 11.3 is installed on your system:
 ```bash
 nvcc --version
 ```
-If not, install it from [NVIDIA website](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_local). We provide example installation instruction for Ubuntu 20.04:
+If not, install it from [NVIDIA website](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_local). We provide example installation instructions for Ubuntu 20.04:
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
 sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
@@ -36,11 +32,11 @@ sudo dpkg -i cuda-repo-ubuntu2004-11-3-local_11.3.0-465.19.01-1_amd64.deb
 sudo apt-key add /var/cuda-repo-ubuntu2004-11-3-local/7fa2af80.pub
 sudo apt-get update
 ```
-We reccommend specify the `cuda-toolkit` version instead using `sudo apt-get -y install cuda` instruction from NVIDIA website to avoid dependency conflict
+We reccommend specify the `cuda-toolkit` version instead using `sudo apt-get -y install cuda` instruction from NVIDIA website to avoid dependency conflict.
 ```bash
 sudo apt-get -y install cuda-toolkit-11.3
 ```
-Since installing CUDA Toolkit 11.3 can break existing CUDA Toolkit installation on your machine, I haven't added `cuda` installation to the automatic installation script
+Since installing CUDA Toolkit 11.3 can break existing CUDA Toolkit installation on your machine, I haven't added `cuda` installation to the automatic installation script.
 
 Clone the repo using your preferred method:
 ```bash
@@ -77,7 +73,7 @@ Download the [SemanticKITTI](http://www.semantic-kitti.org/dataset.html#overview
 
 ## Pretrained models
 
-* Download pretrained models ([Mask4D](https://www.ipb.uni-bonn.de/html/projects/mask_4d/mask4d.ckpt), [MaskPLS](https://www.ipb.uni-bonn.de/html/projects/mask_4d/maskpls.ckpt)) and convert them to `spconv2` format:
+* Download pretrained models ([Mask4D](https://www.ipb.uni-bonn.de/html/projects/mask_4d/mask4d.ckpt), [MaskPLS](https://www.ipb.uni-bonn.de/html/projects/mask_4d/maskpls.ckpt)) and convert them to `spconv` 2.x format:
 ```bash
 bash scripts/download_weights.sh
 ```
