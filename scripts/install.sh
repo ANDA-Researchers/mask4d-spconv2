@@ -5,12 +5,6 @@ if ! command -v curl &> /dev/null; then
     sudo apt install -y curl
 fi
 
-# Install uv
-if ! command -v uv &> /dev/null; then
-    curl -LSf https://astral.sh/uv/install.sh | sh
-    export PATH="$HOME/.local/bin:$PATH"
-fi
-
 if ! command -v nvcc &> /dev/null || ! nvcc --version | grep -q "release 11.3"; then
     # Install conda
     if ! command -v conda &> /dev/null; then
@@ -27,7 +21,13 @@ else
     export CUDA_HOME="$(dirname $(dirname $(which nvcc)))"
 fi
 
-# Create a virtual environment
+# Install uv
+if ! command -v uv &> /dev/null; then
+    curl -LSf https://astral.sh/uv/install.sh | sh
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Create uv environment
 uv venv --clear
 
 # Install pytorch
