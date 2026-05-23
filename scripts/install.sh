@@ -5,7 +5,7 @@ if !command -v uv &> /dev/null; then
 fi
 
 # Create a virtual environment
-uv venv python --clear
+uv venv --clear
 
 # Install mask4d
 uv pip install -e .
