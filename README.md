@@ -40,12 +40,12 @@ Since installing CUDA Toolkit 11.3 can break existing CUDA Toolkit installation 
 
 Clone the repo using your preferred method:
 ```bash
-git clone https://github.com/ANDA-Researchers/mask4d.git
+git clone https://github.com/ANDA-Researchers/mask4d-spconv2.git
 ```
 
 Install this package by running in the root directory of this repo:
 ```bash
-cd mask4d
+cd mask4d-spconv2
 bash scripts/install.sh
 ```
 
