@@ -118,7 +118,7 @@ pq_things:      0.6591691063710488
 rq_things:      0.7141557789053554
 sq_things:      0.8041501718195496
 -->
-We verify that our project reproduces the results from [Mask4D](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/marcuzzi2023ral-meem.pdf):
+We verify that our project reproduces the results on validation set from [Mask4D](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/marcuzzi2023ral-meem.pdf):
 ```
 |        |   AQ   |   IoU  |
 |nlabeled| 0.0000 | 0.0000 |
