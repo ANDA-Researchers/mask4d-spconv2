@@ -27,7 +27,7 @@ Install this package by running in the root directory of this repo:
 cd mask4d-spconv2
 bash scripts/install.sh
 ```
-The script will use the system CUDA Toolkit 11.3 if available, or else it will install `cudatoolkit-dev=11.3` into a `conda` environment to avoid conflict with the the existing CUDA installation
+The script will use the system CUDA Toolkit 11.3 if available, or else it will install `cudatoolkit-dev=11.3` into a `conda` environment to avoid conflict with the existing CUDA installation
 
 ## Data preparation: SemanticKITTI
 Download the [SemanticKITTI](http://www.semantic-kitti.org/dataset.html#overview) dataset inside the directory `data/kitti/`. The directory structure should look like this:
