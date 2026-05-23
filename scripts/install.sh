@@ -1,7 +1,7 @@
 set -e
 
 if ! command -v curl &> /dev/null; then
-    sudo apt update -y
+    sudo apt update
     sudo apt install -y curl
 fi
 
