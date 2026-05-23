@@ -1,24 +1,8 @@
 set -e
 
-# Install curl
 if ! command -v curl &> /dev/null; then
+    sudo apt update -y
     sudo apt install -y curl
-fi
-
-if ! command -v nvcc &> /dev/null || ! nvcc --version | grep -q "release 11.3"; then
-    # Install conda
-    if ! command -v conda &> /dev/null; then
-        curl -fSLo \
-            "$HOME/Miniforge3.sh" \
-            "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
-        bash -b -p "$HOME/Miniforge3.sh"
-        source "$HOME/miniforge3/etc/profile.d/conda.sh"
-    fi
-    # Create conda environment with python and cudatoolkit-dev
-    conda create -y -n cudatoolkit-11-3 -c conda-forge python=3.8 cudatoolkit-dev=11.3
-    export CUDA_HOME="$HOME/miniforge3/envs/cuda-toolkit-11-3"
-else
-    export CUDA_HOME="$(dirname $(dirname $(which nvcc)))"
 fi
 
 # Install uv
