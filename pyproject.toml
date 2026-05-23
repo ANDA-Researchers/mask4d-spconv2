@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "mask4d"
 version = "0.1.0"
@@ -22,7 +26,6 @@ dependencies = [
     "torch-scatter==2.1.0+pt112cu113",
     "torch-sparse==0.6.16+pt112cu113",
     "torch-geometric==1.7.2",
-    "setuptools==59.5.0",
 ]
 
 [[tool.uv.index]]
