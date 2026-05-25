@@ -67,7 +67,7 @@ def main(w, ckpt):
 
     trainer = Trainer(
         gpus=cfg.TRAIN.N_GPUS,
-        accelerator="ddp",
+        accelerator="cuda",
         logger=tb_logger,
         max_epochs=cfg.TRAIN.MAX_EPOCH,
         callbacks=callbacks,

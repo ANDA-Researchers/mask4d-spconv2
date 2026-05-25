@@ -15,7 +15,8 @@ fi
 uv venv --clear
 
 # Install pytorch
-uv pip install torch==2.11.0 torchvision==0.26.0 \
+UV_HTTP_TIMEOUT=1200 \
+    uv pip install torch==2.11.0+cu126 torchvision==0.26.0+cu126 \
     --index-url https://download.pytorch.org/whl/cu126
 
 # Install pytorch-geometric packages

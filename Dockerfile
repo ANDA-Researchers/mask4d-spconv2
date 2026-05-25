@@ -13,17 +13,19 @@ RUN git clone https://github.com/ANDA-Researchers/mask4d-spconv2.git \
 
 WORKDIR "/workspace/mask4d-spconv2"
 
+RUN git checkout cu126
+
 RUN uv venv --clear
 
-RUN uv pip install torch==2.11.0 torchvision==0.26.0 \
+RUN uv pip install torch==2.10.0 torchvision==0.25.0 \
     --index-url https://download.pytorch.org/whl/cu126
 
 RUN uv pip install scipy==1.15.3
 RUN uv pip install \
-    torch-cluster==1.6.3+pt211cu126 \
-    torch-scatter==2.1.2+pt211cu126 \
-    torch-sparse==0.6.18+pt211cu126 \
-    -f https://data.pyg.org/whl/torch-2.11.0+cu126.html
+    torch-cluster==1.6.3+pt210cu126 \
+    torch-scatter==2.1.2+pt210cu126 \
+    torch-sparse==0.6.18+pt210cu126 \
+    -f https://data.pyg.org/whl/torch-2.10.0+cu126.html
 RUN uv pip install torch-geometric==1.7.2
 
 RUN uv sync

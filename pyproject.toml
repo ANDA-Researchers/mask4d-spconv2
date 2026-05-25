@@ -15,32 +15,33 @@ dependencies = [
     "easydict==1.10",
     "filterpy==1.4.5",
     "numpy==1.24.4",
-    "pytorch-lightning==1.5.9",
+    "pytorch-lightning==1.8.6",
     "pyyaml==6.0.1",
     "scipy==1.15.3",
     "spconv-cu126",
     "timm==0.6.13",
-    "torch==2.11.0",
-    "torchvision==0.26.0",
+    "torch==2.11.0+cu126",
+    "torchvision==0.26.0+cu126",
     "torch-cluster==1.6.3+pt211cu126",
     "torch-geometric==1.7.2",
     "torch-scatter==2.1.2+pt211cu126",
     "torch-sparse==0.6.18+pt211cu126",
+    "wheel==0.47.0",
 ]
-
-[[tool.uv.index]]
-name = "pypi"
-url = "https://pypi.org/simple"
-
-[[tool.uv.index]]
-name = "pytorch-cu126"
-url = "https://download.pytorch.org/whl/cu126"
-
-[tool.uv.sources]
-torch = { index = "pytorch-cu126" }
-torchvision = { index = "pytorch-cu126" }
 
 [tool.uv]
 find-links = [
   "https://data.pyg.org/whl/torch-2.11.0+cu126.html"
 ]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+torchvision = { index = "pytorch-cu126" }
