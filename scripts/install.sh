@@ -15,17 +15,17 @@ fi
 uv venv --clear
 
 # Install pytorch
-uv pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 \
-    --extra-index-url https://download.pytorch.org/whl/cu113
+uv pip install torch==2.11.0 torchvision==0.26.0 \
+    --index-url https://download.pytorch.org/whl/cu126
 
 # Install pytorch-geometric packages
-uv add "scipy>=1.10.1"
+uv pip install scipy==1.15.3
 uv pip install \
-    torch-cluster==1.6.0+pt112cu113 \
-    torch-scatter==2.1.0+pt112cu113 \
-    torch-sparse==0.6.16+pt112cu113 \
-    -f https://data.pyg.org/whl/torch-1.12.0+cu113.html --no-index
-uv add torch-geometric==1.7.2
+    torch-cluster==1.6.3+pt211cu126 \
+    torch-scatter==2.1.2+pt211cu126 \
+    torch-sparse==0.6.18+pt211cu126 \
+    -f https://data.pyg.org/whl/torch-2.11.0+cu126.html
+uv pip install torch-geometric==1.7.2
 
 # Install the rest of the dependencies
 uv sync
